@@ -27,7 +27,6 @@ typedef struct Lista{
 } ListaRegistros;
 
 int main(){
-    int i;
     char aluno[50];
     int ano, opcaoMenu = 0;
     ListaRegistros *inicio = NULL;
@@ -51,21 +50,23 @@ int main(){
     cin >> ano;
 
     while(opcaoMenu != 5){
-        cout << "*********************  Menu de Opções ***********************\n";
+        cout << "\n*********************  Menu de Opcoes ***********************\n";
         cout << "1 - Adicionar um registro\n";
-        cout << "2 - Verificar um registro\n";
+        cout << "2 - Verificar os registros\n";
         cout << "3 - Atualizar um registro\n";
         cout << "4 - Deletar um registro\n";
-        cout << "5 - Sair do programa\n";
+        cout << "5 - Sair do programa\n\n";
         cin >> opcaoMenu;
 
         switch(opcaoMenu){
             case 1: {
                 ListaRegistros *novo = new ListaRegistros();
+                system("cls");
                 fflush(stdin);
+
                 cout << "-------------------------------------------------------\n";
                 cout << "Informe a Disciplina: ";
-                cin >> novo->ficha.disciplina;
+                gets(novo->ficha.disciplina);
 
                 cout << "\nInforme a primeira Nota: ";
                 cin >> novo->ficha.notas[0];
@@ -101,9 +102,11 @@ int main(){
             }
             case 2: {
                 if (inicio == NULL) {
-                    cout << "A lista está vazia\n";
+                    cout << "\nA lista está vazia\n";
                 } else {
                     aux = inicio;
+                    system("cls");
+                    cout << "Olá " << aluno << ", bem-vindo ao seu histórico acadêmico!\n";
                     while (aux != NULL) {
                         cout << "\n-------------------------------------------------------\n\n";
                         cout << "Disciplina: " << aux->ficha.disciplina << "\n";
