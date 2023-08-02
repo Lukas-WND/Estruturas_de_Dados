@@ -1,0 +1,3 @@
+C:/Users/lukas/OneDrive/Documentos/Estruturas_de_Dados/Registros/cmake-build-debug/CMakeFiles/Registros.dir
+C:/Users/lukas/OneDrive/Documentos/Estruturas_de_Dados/Registros/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lukas/OneDrive/Documentos/Estruturas_de_Dados/Registros/cmake-build-debug/CMakeFiles/rebuild_cache.dir

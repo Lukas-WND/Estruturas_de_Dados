@@ -1,0 +1,12 @@
+# ninja log v5
+3	143	7127027975799142	build.ninja	6c5b78f24ac925f5
+0	1180	7127018244537828	CMakeFiles/Registros.dir/lista_registros.cpp.obj	88e984d7c386f37a
+1183	1278	7127018245497768	Registros.exe	66cafe36c539c3a2
+2	1206	7127030091168650	CMakeFiles/Registros.dir/lista_registros.cpp.obj	88e984d7c386f37a
+1206	1368	7127030092768644	Registros.exe	66cafe36c539c3a2
+3	1326	7127102350481896	CMakeFiles/Registros.dir/lista_registros.cpp.obj	88e984d7c386f37a
+1326	1510	7127102352312315	Registros.exe	66cafe36c539c3a2
+2	1136	7127102927936392	CMakeFiles/Registros.dir/lista_registros.cpp.obj	88e984d7c386f37a
+1136	1199	7127102928546393	Registros.exe	66cafe36c539c3a2
+2	1278	7127104016851843	CMakeFiles/Registros.dir/lista_registros.cpp.obj	88e984d7c386f37a
+1279	1343	7127104017471793	Registros.exe	66cafe36c539c3a2
