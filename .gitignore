@@ -1,3 +1,6 @@
-./Registros/cmake-build-debug
-./Registros/CMakeLists.txt
-./Registros/.idea
+Registros/cmake-build-debug
+Ponteiros/cmake-build-debug
+Registros/CMakeLists.txt
+Ponteiros/CMakeLists.txt
+Registros/.idea
+Ponteiros/.idea
