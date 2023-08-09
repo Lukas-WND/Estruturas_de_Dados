@@ -13,7 +13,7 @@ typedef struct {
 } HistoricoEscolar;
 
 int main(){
-    int opcaoMenu, count = 0, id = 0;
+    int opcaoMenu, count = 0, id = 0; // a variável count irá representar a quantidade de registros já armazenados
     char aluno[50];
     int ano;
     HistoricoEscolar lista[TAMCONJ]; 	//declaração da variável que é um conj. de registros
@@ -47,7 +47,7 @@ int main(){
 
                 cout << "-------------------------------------------------------\n";
                 cout << "Informe a Disciplina: ";
-                gets(lista[count].disciplina); // *inicio.ficha.disciplina
+                gets(lista[count].disciplina);
 
                 // São armazenados valores dentro do array notas, dentro da variavel ficha, dentro da estrutura novo;
                 cout << "\nInforme a primeira Nota: ";
@@ -108,7 +108,7 @@ int main(){
                 cout << "Alterando registro de id: " << id << "\n";
                 cout << "-------------------------------------------------------\n";
                 cout << "Informe a Disciplina: ";
-                gets(lista[id].disciplina); // *inicio.ficha.disciplina
+                gets(lista[id].disciplina);
 
                 // São armazenados valores dentro do array notas, dentro da variavel ficha, dentro da estrutura novo;
                 cout << "\nInforme a primeira Nota: ";

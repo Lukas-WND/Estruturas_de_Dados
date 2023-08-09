@@ -43,14 +43,14 @@ ListaRegistros *buscaRegistro(ListaRegistros *inicio, int idRegistro){
             }
             aux = aux->prox;
         }
-        cout << "\nID nao encontrado\n";
+        cout << "\nID nao encontrado\n"; // caso não encontre o id o fluxo do método irá continuar
         return NULL;
     }
 }
 
 // Método utilizado para adicionar um novo nó na lista
 /* Os ponteiros de início e fim são passados como referência e não como uma cópia do seu valor,
- * assim podemos modifica-lo na própria memória, e não necessariamente trabalhar com sua cópia */
+ * assim podemos modifica-lo na própria memória, ao invés de trabalhar com sua cópia */
 void adicionarRegistro(ListaRegistros **inicio, ListaRegistros **fim) {
     ListaRegistros* novo = new ListaRegistros();
     system("cls");
@@ -58,7 +58,7 @@ void adicionarRegistro(ListaRegistros **inicio, ListaRegistros **fim) {
 
     cout << "-------------------------------------------------------\n";
     cout << "Informe a Disciplina: ";
-    gets(novo->ficha.disciplina); // *inicio.ficha.disciplina
+    gets(novo->ficha.disciplina); // também escrito como: *novo.ficha.disciplina
 
     // São armazenados valores dentro do array notas, dentro da variavel ficha, dentro da estrutura novo;
     cout << "\nInforme a primeira Nota: ";
@@ -86,17 +86,17 @@ void adicionarRegistro(ListaRegistros **inicio, ListaRegistros **fim) {
     // Verifica se a lista está vazia
     if (*inicio == NULL) {
         *inicio = novo; // O início da lista será o novo nó adicionado nela
-        *fim = novo; // Assim como o fim da lista
+        *fim = novo; // Assim como seu fim
 
-        // O ponteiro que aponta para o próximo nó está vazio pois o elemento adicionado será o primeiro
+        // O ponteiro que aponta para o próximo nó está vazio pois o elemento adicionado será o primeiro da lista
         novo->prox = NULL;
         novo->id = 1; // O Id do primeiro nó é definido
     }
     // Se a lista não estiver vazia...
     else {
-        ListaRegistros *anterior = *fim; // Um novo ponteiro é declarado apontando para o ponteiro fim
+        ListaRegistros *anterior = *fim; // Um novo ponteiro é declarado apontando para o fim da lista
         (*fim)->prox = novo; // O ultimo nó da lista vai apontar para o novo nó
-        *fim = novo; // O novo nó agora é o último, a inserção na lista ocorre somente no final
+        *fim = novo; // O novo nó agora é o último da lista, a inserção na lista ocorre somente no final
         novo->id = anterior->id + 1; // O id no novo nó é igual ao id do nó anterior mais 1
         novo->prox = NULL; // Como o nó foi inserido no final, ele não irá apontar para nenhum outro
     }
@@ -108,10 +108,10 @@ void exibirRegistros(ListaRegistros* inicio, char aluno[20], int ano) {
         cout << "\nA lista está vazia\n";
     }
     else {
-        ListaRegistros* aux = inicio; // Uma variavel auxiliar é declarada para percorrer a lista
+        ListaRegistros* aux = inicio; // Um ponteiro auxiliar é declarado para percorrer a lista
         system("cls");
         cout << "Ola " << aluno << ", bem-vindo ao seu historico academico do ano de " << ano << "!\n";
-        while (aux != NULL) { // Percorre a estrutura até o último nó
+        while (aux != NULL) { // Percorre a estrutura até o último nó, ou seja, até apontar para o vazio (NULL)
             // Exibe as variáveis de ID, disciplina, notas, faltas, e situação
             cout << "\n-------------------------------------------------------\n\n";
             cout << "ID: " << aux->id << "\n";
@@ -137,7 +137,7 @@ void exibirRegistros(ListaRegistros* inicio, char aluno[20], int ano) {
     }
 }
 
-// Como iremos modificar o conteúdo do nó, não podemos usar a sua cópia, mas sim a sua referência
+// Como iremos modificar o conteúdo do nó, não podemos usar a sua cópia, mas sim a sua referência (ponteiro)
 void atualizarRegistro(ListaRegistros **inicio){
     int idRegistro;
 
@@ -145,7 +145,7 @@ void atualizarRegistro(ListaRegistros **inicio){
     cout << "Informe o ID do registro que deseja alterar: ";
     cin >> idRegistro;
 
-    // Essa variável armazena o nó encontado pelo método buscaRegistro
+    // Esse ponteiro aponta  para o nó encontado pelo método buscaRegistro
     ListaRegistros *registroEncontrado = buscaRegistro(*inicio, idRegistro);
 
     if(registroEncontrado == NULL){
@@ -181,7 +181,8 @@ void atualizarRegistro(ListaRegistros **inicio){
 }
 
 // Método utilizado para deletar um nó da lista
-// Como precisaremos fazer uma alteração na lista, precisamos da referência dos ponteiros de início e fim
+// Como precisaremos fazer uma alteração nos nós da lista, precisamos da referência dos ponteiros de início e fim
+// (Ponteiros de ponteiros)
 void deletarRegistro(ListaRegistros **inicio, ListaRegistros **fim){
     ListaRegistros *anterior;
     ListaRegistros *registroEncontrado;
@@ -191,7 +192,7 @@ void deletarRegistro(ListaRegistros **inicio, ListaRegistros **fim){
     cout << "\nInforme o numero do Registro a ser deletado: ";
     cin >> idRegistro;
 
-    // Essa variável armazena o nó correspondente ao registro anterior do passado como parâmetro
+    // Esses ponteiros armazenam o endereço do nó correspondente ao Id do passado como parâmetro
     anterior = buscaRegistro(*inicio, (idRegistro-1));
     registroEncontrado = buscaRegistro(*inicio, idRegistro);
 
@@ -201,7 +202,7 @@ void deletarRegistro(ListaRegistros **inicio, ListaRegistros **fim){
         if (registroEncontrado == *inicio) { // Verifica se o registro encontrado está no começo da lista
             registroEncontrado->id = 1;
             *inicio = registroEncontrado->prox;
-            delete (registroEncontrado);
+            delete (registroEncontrado); // Deleta o nó da memória
         } else if (registroEncontrado == *fim) { // Verifica se o registro encontrado está no final da lista
             anterior->prox = NULL;
             *fim = anterior;

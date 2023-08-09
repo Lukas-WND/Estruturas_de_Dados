@@ -18,7 +18,6 @@ int main() {
     // int *px;
     // px = &x;
     */
-
     cout << x << " " << *px << "\n";
     cout << "Endereco de X: " << px << " Valor de X: " << *px << "\n\n";
 
