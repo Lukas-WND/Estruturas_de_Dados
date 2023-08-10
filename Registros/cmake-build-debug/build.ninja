@@ -55,6 +55,12 @@ build CMakeFiles/Registros.dir/registros_vetores.cpp.obj: CXX_COMPILER__Registro
   OBJECT_DIR = CMakeFiles\Registros.dir
   OBJECT_FILE_DIR = CMakeFiles\Registros.dir
 
+build CMakeFiles/Registros.dir/escola.cpp.obj: CXX_COMPILER__Registros_unscanned_Debug C$:/Users/lukas/OneDrive/Documentos/Estruturas_de_Dados/Registros/escola.cpp || cmake_object_order_depends_target_Registros
+  DEP_FILE = CMakeFiles\Registros.dir\escola.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Registros.dir
+  OBJECT_FILE_DIR = CMakeFiles\Registros.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Registros
@@ -63,7 +69,7 @@ build CMakeFiles/Registros.dir/registros_vetores.cpp.obj: CXX_COMPILER__Registro
 #############################################
 # Link the executable Registros.exe
 
-build Registros.exe: CXX_EXECUTABLE_LINKER__Registros_Debug CMakeFiles/Registros.dir/registros_vetores.cpp.obj
+build Registros.exe: CXX_EXECUTABLE_LINKER__Registros_Debug CMakeFiles/Registros.dir/registros_vetores.cpp.obj CMakeFiles/Registros.dir/escola.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Registros.dir
